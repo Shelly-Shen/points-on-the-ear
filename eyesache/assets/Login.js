@@ -41,7 +41,7 @@ submit.onclick = function (){
         url: url + '/login.action',
         data: userInput,
         dataType: 'text',
-//        contentType:"application/json",
+       contentType:"application/json",
         success: function (data){
             if(data==="false"){
                 document.getElementById('check-password').className = 'show';

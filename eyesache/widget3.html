@@ -94,7 +94,7 @@
 
 
     <header data-am-widget="header" class="am-header am-header-default am-no-layout zhiding">
-        <a href="widget10.html"><img class="am-icon-back" src="assets/i/back.png" width="20px" height="20px"></a>
+        <a href="widget11.html"><img class="am-icon-back" src="assets/i/back.png" width="20px" height="20px"></a>
         <i class="am-icon-bars" data-am-offcanvas="{target: '#bars'}"></i>
         <h1 class="am-header-title">
            疾病介绍与治疗
@@ -121,7 +121,27 @@
 <!-- 
    --> <hr data-am-widget="divider" style="" class="am-divider am-divider-default" />
    <div class="main-class"> 
-
+   		<p style="border: solid gray 1px" class="main-class-attention">
+   		<span class="main-class-span">
+   			<b>疾病描述:</b></span>
+   		<span class="disease-description"><span/></p>
+   		<button class="btn am-btn-primary">查看治疗方案</button>
+   		<p style="border: solid gray 1px;display:none" class="main-class-attention main-cure">
+   			<span class="main-class-span"><b>治疗方案：</b></span>
+   			<span class="cure-plan"></span>
+   		</p>
+   	   <div class="am-modal am-modal-confirm" tabindex="-1" id="my-confirm">
+		  <div class="am-modal-dialog">
+		    <div class="am-modal-hd">宜健康</div>
+		    <div class="am-modal-bd">
+		      
+		    </div>
+		    <div class="am-modal-footer">
+		      <span class="am-modal-btn" data-am-modal-confirm>确定</span>
+		      <span class="am-modal-btn" data-am-modal-cancel>取消</span>
+		    </div>
+		  </div>
+		</div>
       
    </div>
  <hr data-am-widget="divider" style="" class="am-divider am-divider-default" />
@@ -186,10 +206,7 @@
 <script src="assets/js/handlebars.min.js"></script>
 <script src="assets/js/amazeui.widgets.helper.js"></script>
 <script src="assets/js/url.js"></script>
-<!--  <script src="http://192.168.0.110:8080/ErXueSSM/user/findDiseaseCategoryWithAcupointsById.action">
-  
-</script> --> 
-<script type="text/javascript" src="assets/js/widget3.js">
+<script type="text/javascript" src="assets/js/widget3333.js">
   function launchFullscreen(element) {
   if (element.requestFullscreen) {
     element.requestFullscreen();

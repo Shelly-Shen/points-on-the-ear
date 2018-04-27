@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="utf-8"></meta>
+    <title></title>
+    <style media="screen">
+        * {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+        
+        .img-list ul li {
+            float: left;
+        }
+        
+        .img-list ul li img {
+            height: 200px;
+            width: auto;
+        }
+        
+        .img-show {
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            left: 0;
+            top: 0;
+            background: rgba(0, 0, 0, 0.65);
+            z-index: 999;
+            display: none;
+        }
+        
+        .show-box {
+            height: 90%;
+            width: 90%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        
+        #tab span {
+            color: black;
+            cursor: pointer;
+        }
+    </style>
+    <script type="text/javascript" src="../js/jquery-1.4.4.min.js">
+    </script>
+</head>
+
+<body>
+    <div class="container">
+        <table id="tab" border="1">
+
+            <tbody>
+                <tr>
+                    <td align="center">B</td>
+                    <td><span onclick="dachangjing()">臂臑、</span><span onclick="weijing()">不容、髀关、</span><span onclick="pangguangjing()">白环俞、胞肓、</span><span onclick="shenjing()">步廊、</span><span onclick="danjing()">本神、</span><span onclick="dumai()">百会。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">C</td>
+                    <td><span onclick="feijing()">尺泽、</span><span onclick="weijing()">承泣、承满、冲阳、</span><span onclick="pijing()">冲门、</span><span onclick="xiaochangjing()">秉风、</span><span onclick="pangguangjing()">攒竹、承光、次髎、承扶、承筋、承山、</span><span onclick="sanjiaojing()">瘈脉、</span>
+                        <span onclick="danjing()"> 承灵、</span><span onclick="renmai()">承浆、</span><span onclick="dumai()">长强。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">D</td>
+                    <td><span onclick="weijing()">地仓、大迎、大巨、犊鼻、</span><span onclick="pijing()">大都、地机、大横、大包、</span><span onclick="pangguangjing()">大杼、督俞、胆俞、大肠俞、</span><span onclick="shenjing()">大钟、大赫、</span><span onclick="xinbaojing()">大陵、</span><span onclick="danjing()">带脉、地五会、</span>
+                        <span onclick="ganjing()">大敦、</span>
+                        <span onclick="renmai()">膻中、</span><span onclick="dumai()">大椎、兑端。</span></td>
+                </tr>
+
+
+                <tr>
+                    <td align="center">E</td>
+                    <td><span onclick="dachangjing()">二间、</span><span onclick="sanjiaojing()">耳门、 耳和髎。</td>
+                </tr>
+
+                <tr>
+                    <td align="center">F</td>
+                    <td><span onclick="dachangjing()">扶突、</span><span onclick="weijing()">伏兔、丰隆、</span><span onclick="pijing()">府舍、腹结、腹哀、</span><span onclick="pangguangjing()">风门、肺俞、浮郄、附分、飞扬、跗阳、</span><span onclick="shenjing()">复溜、腹通谷、</span><span onclick="danjing()">浮白、风池、风市、</span>
+                        <span onclick="dumai()">风府。</td>
+                </tr>
+
+                <tr>
+                    <td align="center">G</td>
+                    <td><span onclick="weijing()">关门、归来、</span><span onclick="pijing()">公孙、</span><span onclick="pangguangjing()">膈俞、肝俞、关元俞、膏肓俞、膈关、</span><span onclick="sanjiaojing()">关冲、</span><span onclick="danjing()">光明、</span>
+                        <span onclick="renmai()">关元。</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">H</td>
+                    <td><span onclick="dachangjing()">合谷、</span><span onclick="weijing()">滑肉门、</span><span onclick="xiaochangjing()">后溪、会阳、</span><span onclick="pangguangjing()">魂门、肓门、合阳、</span><span onclick="shenjing()">横骨、肓俞、</span><span onclick="sanjiaojing()">会宗、</span>
+                        <span onclick="danjing()">颔厌、环跳、</span>
+                        <span onclick="renmai()">会阴、华盖、</span><span onclick="dumai()">后顶。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">J</td>
+                    <td><span onclick="feijing()">经渠、</span><span onclick="dachangjing()">肩髃、巨骨、</span><span onclick="weijing()">巨髎、颊车、解溪、</span><span onclick="pijing()">箕门、</span><span onclick="xinjing()">极泉、</span><span onclick="xiaochangjing()">肩贞、肩外俞、肩中俞、</span>
+                        <span onclick="pangguangjing()">睛明、厥阴俞、金门、京骨、</span><span onclick="shenjing()">交信、</span><span onclick="xinbaojing()">间使 、</span>
+                        <span onclick="sanjiaojing()">肩髎、角孙、</span><span onclick="danjing()">肩井、京门、居髎、</span><span onclick="ganjing()">急脉、</span><span onclick="renmai()">建里、巨阙、鸠尾、</span><span onclick="dumai()">脊中、筋缩。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">K</td>
+                    <td><span onclick="feijing()">孔最、</span><span onclick="dachangjing()">口禾髎、</span><span onclick="weijing()">库房、</span><span onclick="pangguangjing()">昆仑。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">L</td>
+                    <td><span onclick="feijing()">列缺、</span><span onclick="weijing()">梁门、梁丘、厉兑、</span><span onclick="pijing()">漏谷、</span><span onclick="xinjing()">灵道、</span><span onclick="pangguangjing()">络却、</span><span onclick="shenjing()">灵墟、</span>
+                        <span onclick="xinbaojing()">劳宫、</span><span onclick="sanjiaojing()">颅息、</span><span onclick="ganjing()">蠡沟、
+                      <span onclick="renmai()">廉泉、</span><span onclick="dumai()">灵台。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">M</td>
+                    <td><span onclick="pangguangjing()">眉冲、</span><span onclick="danjing()">目窗、</span><span onclick="dumai()">命门。<span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">N</td>
+                    <td><span onclick="weijing()">内庭、</span><span onclick="xiaochangjing()">臑俞、</span><span onclick="xinbaojing()">内关、</span><span onclick="sanjiaojing()">臑会、</span><span onclick="danjing()">脑空、</span><span onclick="dumai()">脑户。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">P</td>
+                    <td><span onclick="dachangjing()">偏历、</span><span onclick="pangguangjing()">脾俞、膀胱俞、魄户、仆参。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">Q</td>
+                    <td><span onclick="dachangjing()">曲池、</span><span onclick="weijing()">气舍、缺盆、气户、气冲、</span><span onclick="xinjing()">青灵、</span><span onclick="xiaochangjing()">前谷、曲垣、颧髎、</span><span onclick="pangguangjing()">曲差、气海俞、</span><span onclick="shenjing()">气穴、</span>
+                        <span onclick="xinbaojing()">曲泽 、</span><span onclick="sanjiaojing()">清冷渊、</span><span onclick="danjing()">曲鬓、丘墟、</span><span onclick="ganjing()">曲泉 、期门、</span><span onclick="renmai()">曲骨、气海、</span><span onclick="dumai()">强间、前顶。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">R</td>
+                    <td><span onclick="dumai()">人迎、乳中、乳根、</span><span onclick="shenjing()">然谷、</span><span onclick="danjing()">日月。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">S</td>
+                    <td><span onclick="feijing()">少商、</span><span onclick="dachangjing()">商阳、三间、上廉、手三里、手五里、</span><span onclick="weijing()">四白、水突、水道、上巨虚、</span><span onclick="pijing()">商丘、三阴交、食窦、</span><span onclick="xinjing()">少海、神门、少府、少冲、</span><span onclick="xiaochangjing()">少泽、</span>
+                        <span onclick="pangguangjing()">三焦俞、肾俞、上髎、神堂、申脉、束骨、</span><span onclick="shenjing()">水泉、四满、商曲、石关、神封、神藏、俞府、</span><span onclick="sanjiaojing()">三阳络、四渎、丝竹空、</span><span onclick="danjing()">上关、率谷、</span>
+                        <span onclick="renmai()">石门、神阙、水分、上脘、</span><span onclick="dumai()">神道、身柱、上星、神庭、素髎、水沟。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">T</td>
+                    <td><span onclick="feijing()">天府、太渊、</span><span onclick="dachangjing()">天鼎、</span><span onclick="weijing()">头维、太乙、天枢、条口、</span><span onclick="pijing()">太白、天溪、</span><span onclick="xinjing()">通里、</span>
+                        <span onclick="xiaochangjing()">天宗、天窗、天容、听宫、</span><span onclick="pangguangjing()">通天、天柱、</span><span onclick="shenjing()">太溪、</span><span onclick="xinbaojing()">天池、天泉 、天井、</span>
+                        <span onclick="sanjiaojing()">天髎、天牖 、</span><span onclick="danjing()"> 瞳子髎 、听会、天冲、头窍阴、头临泣、</span><span onclick="ganjing()">太冲、</span><span onclick="renmai()">天突、</span><span onclick="dumai()">陶道。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">W</td>
+                    <td><span onclick="dachangjing()">温溜、</span><span onclick="weijing()">屋翳、外陵、</span><span onclick="xiaochangjing()">腕骨、</span><span onclick="pangguangjing()">五处、胃俞、委阳、委中、胃仓、</span><span onclick="sanjiaojing()">外关、</span><span onclick="danjing()">完骨、五枢、维道、外丘。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">X</td>
+                    <td><span onclick="feijing()">侠白、</span><span onclick="dachangjing()">下廉、</span><span onclick="weijing()">下关、下巨虚、陷谷、</span><span onclick="pijing()">血海、胸乡、</span><span onclick="xiaochangjing()">小海、</span><span onclick="pangguangjing()">心俞、小肠俞、下髎、</span>
+                        <span onclick="xinbaojing()">郄门、</span>
+                        <span onclick="sanjiaojing()">消泺、</span><span onclick="danjing()">悬颅、悬厘、膝阳关、悬钟、侠溪、</span><span onclick="ganjing()">行间、膝关、</span><span onclick="renmai()">下脘、璇玑、</span><span onclick="dumai()">悬枢、囟会。</span></td>
+                </tr>
+
+                <tr>
+                    <td align="center">Y</td>
+                    <td><span onclick="feijing()">云门、鱼际、</span><span onclick="dachangjing()">阳溪、迎香、</span><span onclick="weijing()">膺窗、阴市、</span><span onclick="pijing()">隐白、阴陵泉、</span><span onclick="xinjing()">阴郄、</span><span onclick="xiaochangjing()">阳谷、养老、</span>
+                        <span onclick="pangguangjing()">玉枕、殷门、譩譆、阳纲、意舍、</span>
+                        <span onclick="shenjing()">涌泉、阴谷、阴都、幽门、彧中、</span><span onclick="sanjiaojing()">液门、阳池、 翳风、</span><span onclick="danjing()">阳白、渊腋、阳陵泉、阳交、阳辅、</span><span onclick="ganjing()">阴包、阴廉、</span><span onclick="renmai()">阴交、玉堂、</span>
+                        <span onclick="dumai()">腰俞、腰阳关、哑门、龈交。</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">Z</td>
+                    <td><span onclick="feijing()">中府、</span><span onclick="dachangjing()">肘髎、</span><span onclick=weijing() "">足三里、</span><span onclick="pijing()">周荣、</span><span onclick="xiaochangjing()">支正、</span><span onclick="pangguangjing()">中膂俞、中髎、志室、秩边、足通谷、至阴、</span>
+                        <span onclick="shenjing()">照海、筑宾、中注、</span>
+                        <span onclick="xinbaojing()">中冲、</span><span onclick="sanjiaojing()">中渚、 支沟、</span><span onclick="danjing()">正营、辄筋、中渎、足临泣、足窍阴、</span><span onclick="ganjing()"> 中封、中都、足五里、章门、</span><span onclick="renmai()">中极、中脘、中庭、紫宫、</span>
+                        <span onclick="dumai()">中枢、至阳。</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td align="center">经外奇穴</td>
+                    <td>四神聪、当阳、印堂、鱼腰、太阳穴、耳尖、球后、上迎香、内迎香、聚泉、海泉、金津、玉液、翳明、颈百劳、子宫、定喘、夹脊、胃脘下俞、痞根、腰宜、下极俞、腰眼、十七椎、腰奇、肘尖、二白、中泉、中魁、大骨空、小骨空、腰痛点、外劳宫、八邪、四缝、十宣、髋骨、鹤顶、百虫窝、内膝眼、膝眼、胆囊、阑尾、内踝尖、外踝尖、八风、独阴、气端。</td>
+                </tr>
+                <tr>
+                    <td colspan="3">备注:十四经腧穴可点击穴位名称查看所属经络,经脉奇穴需自行查找。</td>
+                </tr>
+
+
+            </tbody>
+        </table>
+    </div>
+    <div class="img-show">
+        <div class="show-box">
+            <img src="" alt=""></img>
+        </div>
+    </div>
+    <script type="text/javascript">
+        var hei = $(".img-show").height();
+        var wid = $(".img-show").width();
+        $(".img-show").click(function() {
+            $(".img-show").fadeOut(500)
+        })
+
+        function dachangjing() {
+
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/2.jpg')
+        }
+
+        function weijing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/3.jpg')
+        }
+
+        function pangguangjing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/7.jpg')
+        }
+
+        function shenjing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/8.jpg')
+        }
+
+        function danjing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/11.jpg')
+        }
+
+        function dumai() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/14.jpg')
+        }
+
+        function feijing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/1.jpg')
+        }
+
+        function renmai() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/13.jpg')
+        }
+
+        function xiaochangjing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/6.jpg')
+        }
+
+        function pijing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/4.jpg')
+        }
+
+        function sanjiaojing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/10.jpg')
+        }
+
+        function xinbaojing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/9.jpg')
+        }
+
+        function ganjing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/12.jpg')
+        }
+
+        function xinjing() {
+            $(".show-box").css({
+                "margin-top": -0.4 * hei + 'px',
+                'margin-left': -0.25 * wid + 'px'
+            });
+            $(".show-box img").css({
+                "height": 0.8 * hei + 'px',
+                'width': 0.5 * wid + 'px'
+            });
+            $(".img-show").fadeIn(500);
+            $(".show-box img").attr('src', './assets/img/5.jpg')
+        }
+    </script>
+</body>
+
+</html>
